@@ -17,7 +17,7 @@ C_DEPS += \
 portaudio/src/hostapi/alsa/%.o: ../portaudio/src/hostapi/alsa/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C Compiler'
-	gcc -D_GLIBCXX_USE_CXX11_ABI=0 -DADLMIDI_USE_DOSBOX_OPL -DADLMIDI_DISABLE_CPP_EXTRAS -DPA_USE_ALSA=1 -I"/home/djthunder/eclipse-workspace/adlmidi/portaudio/src/os/unix" -I"/home/djthunder/eclipse-workspace/adlmidi/src" -I"/home/djthunder/eclipse-workspace/adlmidi/portaudio/include" -I"/home/djthunder/eclipse-workspace/adlmidi/portaudio/src/common" -O3 -c -fmessage-length=0 -Wno-deprecated-declarations -Wno-implicit-function-declaration -fPIC -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
+	gcc -D_GLIBCXX_USE_CXX11_ABI=0 -DADLMIDI_USE_DOSBOX_OPL -DADLMIDI_DISABLE_CPP_EXTRAS -DPA_USE_ALSA=1 -I"$(abspath $(CURDIR)/../portaudio/src/os/unix") -I"$(abspath $(CURDIR)/../src") -I"$(abspath $(CURDIR)/../portaudio/include") -I"$(abspath $(CURDIR)/../portaudio/src/common") -O3 -c -fmessage-length=0 -Wno-deprecated-declarations -Wno-implicit-function-declaration -fPIC -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
